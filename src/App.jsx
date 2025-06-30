@@ -1,9 +1,10 @@
 import { EmailForm } from "./components/EmailForm";
+import { HomePage } from "./components/HomePage";
 
 function App() {
   return (
     <>
-      <EmailForm />
+      <HomePage />
     </>
   );
 }

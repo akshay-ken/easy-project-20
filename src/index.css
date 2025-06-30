@@ -1,1 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+
+@layer base {
+  body {
+    @apply font-one;
+  }
+}
+
+@theme {
+  --font-one: Libre Franklin;
+  --color-Blue: hsl(223, 87%, 63%);
+  --color-Pale-Blue: hsl(223, 100%, 88%);
+  --color-Light-Red: hsl(354, 100%, 66%);
+  --color-Gray: hsl(0, 0%, 59%);
+  --color-Very-Dark-Blue: hsl(209, 33%, 12%);
+}
