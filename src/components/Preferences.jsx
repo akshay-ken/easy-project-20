@@ -10,6 +10,17 @@ export function Preferences({ ref }) {
   function handleChangeUpdateProdPref() {
     setWantsProdUpdateInfo((prevPref) => !prevPref);
   }
+  function reset() {
+    setWantsNewProdInfo(false);
+    setWantsProdUpdateInfo(false);
+  }
+
+  ref.current.reset = reset;
+
+  ref.current.selectedPreferences = {
+    newProductInfo: wantsNewProdInfo,
+    productUpdateInfo: wantsProdUpdateInfo,
+  };
 
   return (
     <>

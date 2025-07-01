@@ -4,7 +4,7 @@ import { Preferences } from "./Preferences";
 export function EmailForm() {
   const [enteredEmail, setEnteredEmail] = useState("");
   const emailRef = useRef(null); //testing ref against useState
-  const preferencesRef = useRef(null);
+  const preferencesRef = useRef({});
 
   function handleUpdateEmail(event) {
     setEnteredEmail(event.target.value);
@@ -12,8 +12,10 @@ export function EmailForm() {
   function handleSubmitForm(event) {
     event.preventDefault();
     // const enteredEmail = emailRef.current.value;
-    console.log(enteredEmail);
-    setEnteredEmail("");
+    // console.log(enteredEmail);
+    // setEnteredEmail("");
+    console.log(preferencesRef.current.selectedPreferences);
+    preferencesRef.current.reset();
   }
   return (
     <>

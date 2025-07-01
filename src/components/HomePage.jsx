@@ -3,8 +3,26 @@ import bckImg from "../assets/images/illustration-dashboard.png";
 import { TiSocialFacebook } from "react-icons/ti";
 import { TiSocialTwitter } from "react-icons/ti";
 import { FaInstagram } from "react-icons/fa";
+import { useRef, useState } from "react";
+import clsx from "clsx";
 
 export function HomePage() {
+  const emailRef = useRef("");
+  const [emailError, setEmailError] = useState(false);
+
+  function handleSubmit() {
+    const emailId = emailRef.current.value;
+    if (!(emailId.includes("@") && emailId.includes("."))) {
+      setEmailError(true);
+    } else {
+      setEmailError(false);
+    }
+  }
+
+  const baseClass = clsx(
+    "outline-2 outline-Gray p-4 rounded-full w-full md:max-w-4/6 placeholder:text-Gray placeholder:text-xl placeholder:px-6",
+    { "outline-Light-Red outline-4": emailError }
+  );
   return (
     <>
       <main className="w-full my-28">
@@ -22,13 +40,25 @@ export function HomePage() {
           <div className="flex flex-col md:flex-row gap-y-6 md:gap-x-6 my-10">
             <input
               type="text"
+              ref={emailRef}
               placeholder="Your email address..."
-              className="outline-2 outline-Gray p-4 rounded-full w-full md:max-w-4/6 placeholder:text-Gray placeholder:text-xl placeholder:px-6"
+              className={baseClass}
             />
-            <button className="bg-Blue rounded-full text-2xl p-4 w-full md:max-w-2/6 text-white">
+
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="bg-Blue rounded-full text-2xl p-4 w-full md:max-w-2/6 text-white"
+            >
               Notify Me
             </button>
           </div>
+          {emailError ? (
+            <p className="md:-mt-10 text-sm ml-10 font-bold text-Light-Red md:mb-10 -mt-31 mb-30">
+              Please provide valid email address
+            </p>
+          ) : null}
+
           <div>
             <img src={bckImg} alt="" />
           </div>
