@@ -1,8 +1,10 @@
 import { useRef, useState } from "react";
+import { Preferences } from "./Preferences";
 
 export function EmailForm() {
   const [enteredEmail, setEnteredEmail] = useState("");
   const emailRef = useRef(null); //testing ref against useState
+  const preferencesRef = useRef(null);
 
   function handleUpdateEmail(event) {
     setEnteredEmail(event.target.value);
@@ -27,6 +29,7 @@ export function EmailForm() {
           value={enteredEmail}
           onChange={handleUpdateEmail}
         />
+        <Preferences ref={preferencesRef} />
         <button className="bg-red-300">Save</button>
       </form>
     </>

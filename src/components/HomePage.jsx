@@ -8,31 +8,31 @@ export function HomePage() {
   return (
     <>
       <main className="w-full my-28">
-        <div className="max-w-sm mx-auto">
+        <div className="max-w-sm mx-auto md:max-w-2xl">
           <header className="flex justify-center">
             <img src={headerIcon} alt="" />
           </header>
-          <h1 className="mt-12 mb-6 text-3xl text-center font-light text-Gray">
+          <h1 className="mt-12 mb-6 text-3xl md:text-5xl text-center font-light text-Gray">
             We are launching
             <span className="text-Very-Dark-Blue font-extrabold"> soon!</span>
           </h1>
           <p className="text-center text-xl font-light">
             Subscribe and get notified
           </p>
-          <div className="flex flex-col gap-y-6 my-10">
+          <div className="flex flex-col md:flex-row gap-y-6 md:gap-x-6 my-10">
             <input
               type="text"
               placeholder="Your email address..."
-              className="outline-2 outline-Gray p-4 rounded-full w-full placeholder:text-Gray placeholder:text-xl placeholder:px-6"
+              className="outline-2 outline-Gray p-4 rounded-full w-full md:max-w-4/6 placeholder:text-Gray placeholder:text-xl placeholder:px-6"
             />
-            <button className="bg-Blue rounded-full text-2xl p-4 w-full text-white">
+            <button className="bg-Blue rounded-full text-2xl p-4 w-full md:max-w-2/6 text-white">
               Notify Me
             </button>
           </div>
           <div>
             <img src={bckImg} alt="" />
           </div>
-          <footer className="flex flex-row justify-center my-12 gap-x-10">
+          <footer className="flex flex-row justify-center my-12 gap-x-10 md:scale-50">
             <TiSocialFacebook className="size-12 rounded-full fill-Blue ring-Gray ring-offset-8 ring-2" />
             <TiSocialTwitter className="size-12 rounded-full fill-Blue ring-Gray ring-2 ring-offset-8" />
             <FaInstagram className="size-12 rounded-full fill-Blue ring-Gray ring-2 ring-offset-8" />
